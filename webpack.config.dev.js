@@ -69,7 +69,7 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },*/
-      {test: /\.css$/, loaders: ['style', 'css?sourceMap', 'postcss']},
+      {test: /\.css$/, loaders: ['style', 'css?importLoaders=1&sourceMap', 'postcss']},
       {test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap']},
       {test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'url?name=[name].[ext]'},
       {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url?limit=10000&mimetype=application/font-woff&name=fonts/[name].[ext]"},
@@ -86,7 +86,12 @@ module.exports = {
   // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps
   // and https://webpack.github.io/docs/configuration.html#devtool
   devtool: 'cheap-module-eval-source-map',
-  postcss: ()=> [cssnext], //[autoprefixer]
+  postcss: [
+    require("postcss-import")({
+      addDependencyTo: webpack
+    }),
+    cssnext,
+  ], //()=> [cssnext], //[autoprefixer]
   vue: {
     loaders: {
       // js: 'babel'
