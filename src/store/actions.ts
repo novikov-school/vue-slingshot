@@ -7,13 +7,8 @@ export const applicationReady: StoreAction = (store: StoreActionContext) => {
   store.commit(types.APPLICATION_READY);
 };
 
-export const setCurrentUser: StoreAction = (store: StoreActionContext, user) => {
-  console.log('setCurrentUser ' + user);
-};
-
 export const logEvent: StoreAction = (store: StoreActionContext, vm) => {
-  console.log(vm);
-  store.commit(types.LOG_EVENT);
+  store.commit(types.LOG_EVENT, vm);
 };
 
 export const playTrack: StoreAction = (store: StoreActionContext, track) => {

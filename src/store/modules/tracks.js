@@ -24,7 +24,6 @@ const mutations = {
         state.all.find(p => p.id === id);
     },
     [types.PLAY_TRACK](state, track) {
-        console.log(track.source);
         state.current = state.playing = track;
         state.handle = new Audio(track.source);
         state.handle.play();

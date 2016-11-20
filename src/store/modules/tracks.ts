@@ -31,7 +31,6 @@ const mutations = {
   },
 
   [types.PLAY_TRACK] (state: TrackState, track) {
-    console.log(track.source);
     state.current = state.playing = track;
     state.handle = new Audio(track.source);
     state.handle.play();

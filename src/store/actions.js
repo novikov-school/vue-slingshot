@@ -3,12 +3,8 @@ import * as types from "./mutation-types";
 export const applicationReady = (store) => {
     store.commit(types.APPLICATION_READY);
 };
-export const setCurrentUser = (store, user) => {
-    console.log('setCurrentUser ' + user);
-};
 export const logEvent = (store, vm) => {
-    console.log(vm);
-    store.commit(types.LOG_EVENT);
+    store.commit(types.LOG_EVENT, vm);
 };
 export const playTrack = (store, track) => {
     store.commit(types.PAUSE_TRACK);

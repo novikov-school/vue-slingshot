@@ -28,8 +28,10 @@
     "test-local": "mocha test/testSetup.js \"test/**/*.test.js\" --reporter progress",
     "test:cover": "babel-node node_modules/isparta/bin/isparta cover --root src --report html node_modules/mocha/bin/_mocha -- --require ./tools/testSetup.js \"test/**/*.spec.js\" --reporter progress",
     "test:watch": "npm run test -- --watch",
-    "lint": "esw src --color",
-    "lint:watch": "npm run lint -- --watch"
+    "eslint": "esw src --color",
+    "stylelint": "stylelint ./src/**/*.css --color",
+    "lint": "npm run eslint && npm run stylelint",
+    "lint:watch": "npm run eslint -- --watch"
   },
   "dependencies": {
     "es6-promise": "3.3.1",
@@ -83,6 +85,8 @@
     "sass-loader": "4.0.2",
     "sinon": "1.17.6",
     "style-loader": "0.13.1",
+    "stylelint": "7.6.0",
+    "stylelint-config-standard": "15.0.0",
     "uglify-loader": "1.3.0",
     "url-loader": "0.5.7",
     "vue-hot-reload-api": "2.0.6",
