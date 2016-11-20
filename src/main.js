@@ -2,10 +2,6 @@
 import Vue from "vue";
 // plugins
 import VueRouter from 'vue-router';
-// css & js
-import vendor from "./vendor";
-//import "./styles/fonts.css";
-//import "./styles/animations.css";
 // router & store
 import {createStore} from "./store";
 import router from './router';
@@ -51,7 +47,4 @@ if (typeof window !== "undefined" && window != undefined) {
   Vue.config.debug = true;
   window.vue = vm;
   window.Vue = require('vue');
-}
-if (Vue.config.debug) {
-  console.log('Vendor chunk: ' + vendor);
 }

@@ -1,12 +1,12 @@
 import VueRouter from 'vue-router';
 // app routes
-import routeArtists from './page-artists';
+import routeArtists from './page-artist';
 
 const defaultRoute = routeArtists.path;
 
 const router = new VueRouter({
-  mode: 'history',
-  base: "/app/",
+  mode: 'hash',
+  base: "/",
   routes: [
     { path: '/', redirect: defaultRoute },
     routeArtists

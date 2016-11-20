@@ -1,25 +1,7 @@
 import "isomorphic-fetch";
 import * as types from "./mutation-types";
-export const getAllGreetings = (store) => {
-    const greetings = [
-        'Howdy!',
-        'Hi, %s!',
-        'Howdy, %s!',
-        'How are you doing?',
-        'What`s next with %s?',
-        'All fine with %s?',
-        'How do you do?',
-        'How are you feel with %s?'
-    ];
-    store.commit(types.RECEIVE_GREETINGS, { greetings });
-};
 export const applicationReady = (store) => {
-    return fetch('http://google.com').then(() => {
-        store.commit(types.USER_LOGGED_IN);
-    }).catch((e) => {
-        console.log(e);
-        store.commit(types.USER_OFFLINE);
-    });
+    store.commit(types.APPLICATION_READY);
 };
 export const setCurrentUser = (store, user) => {
     console.log('setCurrentUser ' + user);
@@ -46,5 +28,11 @@ export const playNext = (store) => {
             commit(types.PLAY_TRACK, tracks.all[next]);
         }
     }
+};
+export const fetchRelatedArtists = (store) => {
+    return new Promise((resolve) => {
+        store.commit(types.RECEIVE_ARTISTS, store.state.artists.all);
+        resolve(store.state.artists.all);
+    });
 };
 //# sourceMappingURL=actions.js.map

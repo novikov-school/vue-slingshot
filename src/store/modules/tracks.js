@@ -13,7 +13,7 @@ const state = {
     },
     playing: null,
     current: null,
-    handle: new Audio('http://s.dootoo.ru/api/v2/media/stream/5')
+    handle: null
 };
 // mutations
 const mutations = {

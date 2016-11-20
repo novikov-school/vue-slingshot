@@ -8,19 +8,9 @@ const tpl = `<!-- Main -->
 
   <div class="collapse in" id="main">
 
-    <a href="#" class="navigation__list__item">
+    <a v-for="item in items" href="#" class="navigation__list__item">
       <i class="ion-ios-browsers"></i>
-      <span>Browse</span>
-    </a>
-
-    <a href="#" class="navigation__list__item">
-      <i class="ion-person-stalker"></i>
-      <span>Activity</span>
-    </a>
-
-    <a href="#" class="navigation__list__item">
-      <i class="ion-radio-waves"></i>
-      <span>Radio</span>
+      <span>{{ item }}</span>
     </a>
 
   </div>
@@ -29,5 +19,14 @@ const tpl = `<!-- Main -->
 `;
 
 export default {
-  template: tpl
+  template: tpl,
+  data(){
+    return {
+      items: [
+        'Browse',
+        'Activity',
+        'Radio'
+      ]
+    }
+  }
 }

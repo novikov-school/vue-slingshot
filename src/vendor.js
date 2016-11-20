@@ -1,3 +1,2 @@
-import "bootstrap/dist/css/bootstrap.css";
-export default [ 'bootstrap' ];
+export default [ 'dep-free' ];
 

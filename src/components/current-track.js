@@ -63,5 +63,8 @@ const tpl = `
 `;
 
 export default {
-  template: tpl
+  template: tpl,
+  data(){
+    return {}
+  }
 }

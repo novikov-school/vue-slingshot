@@ -1,3 +1,4 @@
+export const APPLICATION_READY = 'APPLICATION_READY';
 export const ADD_TO_QUEUE = 'ADD_TO_QUEUE';
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
 export const RECEIVE_GREETINGS = 'RECEIVE_GREETINGS';
@@ -13,4 +14,5 @@ export const SET_MUSIC_DURATION = 'SET_MUSIC_DURATION';
 export const SET_MUSIC_RIGHTNOW = 'SET_MUSIC_RIGHTNOW';
 export const SET_CURRENT_MUSIC = 'SET_CURRENT_MUSIC';
 export const SET_LOADING_STATUS = 'SET_LOADING_STATUS';
+export const RECEIVE_ARTISTS = 'RECEIVE_ARTISTS';
 //# sourceMappingURL=mutation-types.js.map

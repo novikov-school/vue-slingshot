@@ -3,19 +3,22 @@ import * as types from '../mutation-types'
 // initial state
 const state = {
   all: [
-    'Привет!',
+    'Howdy!',
     'Hi, %s!',
     'Howdy, %s!',
-    'Йо!',
-    'Всё хорошо, %s?',
-    'Прекрасно, не правда ли, %s?',
-    'Как жизнь, %s?',
-    'Как дела, %s?'
+    'How are you doing?',
+    'What`s next with %s?',
+    'All fine with %s?',
+    'How do you do?',
+    'How are you feel with %s?'
   ]
 };
 
 // mutations
 const mutations = {
+  [types.APPLICATION_READY](){
+
+  },
   [types.RECEIVE_GREETINGS] (state, { greetings }) {
     state.all = greetings
   }

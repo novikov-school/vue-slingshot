@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+/*@import "~bootstrap/dist/css/bootstrap.css";*/
 
 :root {
   --green: rgb(30, 215, 96);
@@ -905,22 +905,26 @@ body {
               border-bottom: 4px solid rgba(0, 0, 0, 0);
             }
 
-          }
-
-          &.active {
-
-            & a {
-              color: var(--white);
-              background: none;
-              border: none;
-              border-bottom: 4px solid var(--green);
-
-              &:hover {
-                border-bottom: 4px solid var(--green);
-              }
+            &:focus, &:hover, &:visited {
+              outline: 0;
+              background: transparent;
             }
 
+            &.active {
+
+                color: var(--white);
+                background: none;
+                border: none;
+                border-bottom: 4px solid var(--green);
+
+                &:hover {
+                  border-bottom: 4px solid var(--green);
+                }
+
+            }
           }
+
+
 
         }
 

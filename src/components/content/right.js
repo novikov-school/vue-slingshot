@@ -22,8 +22,7 @@ export default {
         'Ricahrd Tomkins',
         'Tony Russo',
         'Alyssa Marist',
-        'Ron Samson',
-        ''
+        'Ron Samson'
       ]
     }
   }

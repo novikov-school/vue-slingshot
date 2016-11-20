@@ -1,6 +1,7 @@
 /// <reference path="../typings/node/node.d.ts" />
 const _vuex = require('vuex');
-import {State, Store} from './state';
+import {Store} from './types';
+import {State} from './state';
 
 type Dictionary<T> = { [key: string]: T };
 

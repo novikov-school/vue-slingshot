@@ -1,33 +1,14 @@
-/// <reference path="../typings/isomorphic-fetch/isomorphic-fetch.d.ts" />
 import "isomorphic-fetch";
 import * as types from "./mutation-types";
-import {StoreAction, StoreActionContext, Commit} from "./state";
-
-export const getAllGreetings: StoreAction = (store: StoreActionContext) => {
-  const greetings = [
-    'Howdy!',
-    'Hi, %s!',
-    'Howdy, %s!',
-    'How are you doing?',
-    'What`s next with %s?',
-    'All fine with %s?',
-    'How do you do?',
-    'How are you feel with %s?'
-  ];
-  store.commit(types.RECEIVE_GREETINGS, {greetings});
-};
+import {Commit} from "./types";
+import {StoreAction, StoreActionContext} from "./state";
 
 export const applicationReady: StoreAction = (store: StoreActionContext) => {
-  return fetch('http://google.com').then(() => {
-    store.commit(types.USER_LOGGED_IN);
-  }).catch((e) => {
-    console.log(e);
-    store.commit(types.USER_OFFLINE);
-  });
+  store.commit(types.APPLICATION_READY);
 };
 
 export const setCurrentUser: StoreAction = (store: StoreActionContext, user) => {
-  console.log('setCurrentUser ' +  user);
+  console.log('setCurrentUser ' + user);
 };
 
 export const logEvent: StoreAction = (store: StoreActionContext, vm) => {
@@ -45,15 +26,22 @@ export const pauseTrack: StoreAction = (store: StoreActionContext) => {
 };
 
 export const playNext: StoreAction = (store: StoreActionContext) => {
-  const commit : Commit = store.commit;
-  const tracks : any = store.state.tracks;
+  const commit: Commit = store.commit;
+  const tracks: any = store.state.tracks;
 
-  if(tracks.playing){
+  if (tracks.playing) {
     const current = tracks.all.indexOf(tracks.playing);
     const next = (current + 1) % tracks.all.length;
-    if(tracks.all[next]){
+    if (tracks.all[next]) {
       commit(types.PAUSE_TRACK);
       commit(types.PLAY_TRACK, tracks.all[next]);
     }
   }
+};
+
+export const fetchRelatedArtists = (store: StoreActionContext) => {
+  return new Promise((resolve) => {
+    store.commit(types.RECEIVE_ARTISTS, store.state.artists.all);
+    resolve(store.state.artists.all);
+  })
 };

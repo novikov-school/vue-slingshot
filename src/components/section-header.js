@@ -27,16 +27,15 @@ const tpl = `<!-- header -->
     
       <span class="user__info__img">
       
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/adam_proPic.jpg" alt="Profile Picture"
-             class="img-responsive"/>
+        <img src="/public/img/jonny.png" alt="Profile Picture" class="img-responsive"/>
         
       </span>
 
       <span class="user__info__name">
       
-        <span class="first">Adam</span>
+        <span class="first">{{ user.first }}</span>
         
-        <span class="last">Lowenthal</span>
+        <span class="last">{{ user.last }}</span>
         
       </span>
 
@@ -45,8 +44,7 @@ const tpl = `<!-- header -->
     <div class="user__actions">
 
       <div class="dropdown">
-        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="true">
+        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <i class="ion-chevron-down"></i>
         </button>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
@@ -64,5 +62,13 @@ const tpl = `<!-- header -->
 </section>`;
 
 export default {
-  template: tpl
+  template: tpl,
+  data(){
+    return {
+      user: {
+        first: 'Ivan',
+        last: 'Novikov'
+      }
+    }
+  }
 }
