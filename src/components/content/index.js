@@ -1,3 +1,7 @@
+import contentLeft from './left';
+import contentMiddle from './middle';
+import contentRight from './right';
+
 const tpl = `
 <section class="content">
 
@@ -8,10 +12,6 @@ const tpl = `
   <content-right></content-right>
   
 </section>`;
-
-import contentLeft from './left';
-import contentMiddle from './middle';
-import contentRight from './right';
 
 export default {
   template: tpl,

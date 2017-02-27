@@ -1,3 +1,6 @@
+import navigation from '../navigation';
+import playing from './playing';
+
 const tpl = `<div class="content__left">
 
   <navigation></navigation>
@@ -14,9 +17,6 @@ const tpl = `<div class="content__left">
   <playing :track="track"></playing>
   
 </div>`;
-
-import navigation from '../navigation';
-import playing from './playing';
 
 export default {
   template: tpl,
