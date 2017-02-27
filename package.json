@@ -35,9 +35,9 @@
   },
   "dependencies": {
     "es6-promise": "3.3.1",
-    "vue": "^2.0.3",
-    "vue-i18n": "^4.6.0",
-    "vue-router": "^2.0.1"
+    "vue": "^2.1.10",
+    "vue-i18n": "^4.10.0",
+    "vue-router": "^2.2.0"
   },
   "devDependencies": {
     "autoprefixer": "6.5.1",
