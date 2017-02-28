@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var dist = require('./tools/dist');
 
-const GLOBALS = {
+var GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
   __DEV__: false
 };
@@ -73,6 +73,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
         exclude: /node_modules/
@@ -98,5 +102,10 @@ module.exports = {
     ]
   },
   devtool: '#source-map',
-  postcss: ()=> [cssnext],
+  postcss: [
+    require("postcss-import")({
+      addDependencyTo: webpack
+    }),
+    cssnext,
+  ],
 };
