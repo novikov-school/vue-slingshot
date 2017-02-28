@@ -40,7 +40,6 @@ module.exports = {
     new webpack.DefinePlugin(GLOBALS),
 
     // Generate an external css file with a hash in the filename
-    // new ExtractTextPlugin('[name].[contenthash].css'),
     new ExtractTextPlugin("styles.css"),
 
     // Generate HTML file that contains references to generated bundles. See here for how this works: https://github.com/ampedandwired/html-webpack-plugin#basic-usage
@@ -99,5 +98,5 @@ module.exports = {
     ]
   },
   devtool: '#source-map',
-  postcss: ()=> [cssnext], //[autoprefixer]
+  postcss: ()=> [cssnext],
 };

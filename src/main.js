@@ -1,50 +1,29 @@
 /* eslint-disable no-console, no-undef */
 import Vue from "vue";
-// plugins
 import VueRouter from 'vue-router';
-// router & store
 import {createStore} from "./store";
 import router from './router';
+import App from './App.vue';
+
+// plugins
+Vue.use(VueRouter);
+
+// create store & load state
 const store = createStore();
 
-Vue.use(VueRouter);
-//Vue.use(layoutPlugin);
-//i18n(Vue);
-
+// root component
 const main = {
-  router: router,
-  store: store,
+  router,
+  store,
   el: '#app',
-  template: '<app></app>'
-};
-if(__DEV__){
-  console.log('Development...');
-  main.components = {
-    'app': require('./App.vue')
-  };
-}
-else {
-  console.log('Production...');
-  main.components = {
-    'app': require('./App').default
-  }
-}
-
-// Register our custom key codes
-Vue.config.keyCodes = {
-  a: 65,
-  j: 74,
-  k: 75,
-  f: 70,
-  mediaNext: 176,
-  mediaPrev: 177,
-  mediaToggle: 179
+  render: h => h(App)
 };
 const vm = new Vue(main);
 
+// verbose debugging
 if (typeof window !== "undefined" && window != undefined) {
   Vue.config.devtools = true;
   Vue.config.debug = true;
   window.vue = vm;
-  window.Vue = require('vue');
+  window.Vue = Vue;
 }

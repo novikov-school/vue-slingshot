@@ -1,4 +1,4 @@
-const tpl = `<!-- Your Music -->
+const template = `<!-- Your Music -->
 <div class="navigation__list">
 
   <div class="navigation__list__header"
@@ -11,17 +11,16 @@ const tpl = `<!-- Your Music -->
   </div>
 
   <div class="collapse in" id="yourMusic">
-
     <a v-for="item in items" href="#" class="navigation__list__item">
       <i class="ion-headphone"></i>
       <span>{{ item }}</span>
     </a>
-
   </div>
+  
 </div>`;
 
 export default {
-  template: tpl,
+  template,
   data() {
     return {
       items: [

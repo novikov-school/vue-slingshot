@@ -3,9 +3,6 @@ import * as types from "./mutation-types";
 export const applicationReady = (store) => {
     store.commit(types.APPLICATION_READY);
 };
-export const logEvent = (store, vm) => {
-    store.commit(types.LOG_EVENT, vm);
-};
 export const playTrack = (store, track) => {
     store.commit(types.PAUSE_TRACK);
     store.commit(types.PLAY_TRACK, track);

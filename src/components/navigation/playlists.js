@@ -1,4 +1,4 @@
-const tpl = `<!-- Playlists -->
+const template = `<!-- Playlists -->
 <div class="navigation__list">
   <div class="navigation__list__header"
        role="button"
@@ -10,17 +10,15 @@ const tpl = `<!-- Playlists -->
   </div>
 
   <div class="collapse in" id="playlists">
-
     <a v-for="playlist in playlists" href="#" class="navigation__list__item">
       <i class="ion-ios-musical-notes"></i>
       <span>{{ playlist }}</span>
     </a>
-
   </div>
 </div>`;
 
 export default {
-  template: tpl,
+  template,
   data() {
     return {
       playlists: [

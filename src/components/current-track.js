@@ -1,36 +1,25 @@
-const tpl = `
+const template = ` 
 <section class="current-track">
-
   <div class="current-track__actions">
-  
     <a class="ion-ios-skipbackward"></a>
-    
     <a class="ion-ios-play play"></a>
-    
     <a class="ion-ios-skipforward"></a>
-    
   </div>
   
   <div class="current-track__progress">
-  
     <div class="current-track__progress__start">0:01</div>
     
     <div class="current-track__progress__bar">
-      
       <div id="song-progress"></div>
-      
     </div>
     
     <div class="current-track__progress__finish">3:07</div>
-    
   </div>
   
   <div class="current-track__options">
-  
     <a href="#" class="lyrics">Lyrics</a>
     
     <span class="controls">
-    
       <a href="#" class="control">
         <i class="ion-navicon"></i>
       </a>
@@ -49,21 +38,15 @@ const tpl = `
       </a>
       
       <a href="#" class="control volume">
-        
         <i class="ion-volume-high"></i>
-      
         <div id="song-volume"></div>
-        
       </a>
-      
     </span>
-    
   </div>
-</section>
-`;
+</section>`;
 
 export default {
-  template: tpl,
+  template,
   data(){
     return {}
   }

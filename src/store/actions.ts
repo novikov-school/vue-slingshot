@@ -7,10 +7,6 @@ export const applicationReady: StoreAction = (store: StoreActionContext) => {
   store.commit(types.APPLICATION_READY);
 };
 
-export const logEvent: StoreAction = (store: StoreActionContext, vm) => {
-  store.commit(types.LOG_EVENT, vm);
-};
-
 export const playTrack: StoreAction = (store: StoreActionContext, track) => {
   store.commit(types.PAUSE_TRACK);
   store.commit(types.PLAY_TRACK, track);

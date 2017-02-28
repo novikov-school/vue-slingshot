@@ -23,10 +23,6 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  /*
-  externals: {
-    "Vue": "Vue"
-  },*/
   resolveLoader: {
     root: __dirname + 'node_modules'
   },
@@ -64,11 +60,6 @@ module.exports = {
         loaders: ["file?context=public&name=/[path][name].[ext]"],
         exclude: /node_modules/
       },
-      /*
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-      },*/
       {test: /\.css$/, loaders: ['style', 'css?importLoaders=1&sourceMap', 'postcss']},
       {test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap']},
       {test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'url?name=[name].[ext]'},
@@ -91,7 +82,7 @@ module.exports = {
       addDependencyTo: webpack
     }),
     cssnext,
-  ], //()=> [cssnext], //[autoprefixer]
+  ],
   vue: {
     loaders: {
       // js: 'babel'

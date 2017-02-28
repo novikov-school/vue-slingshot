@@ -23,5 +23,4 @@ function corsProxyMiddleware(req, res, next) {
   return proxyMiddleware(req, res, next);
 }
 
-//export default corsProxyMiddleware;
 module.exports = corsProxy(false);
