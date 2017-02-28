@@ -16,9 +16,8 @@ export const pauseTrack: StoreAction = (store: StoreActionContext) => {
   store.commit(types.PAUSE_TRACK);
 };
 
-export const playNext: StoreAction = (store: StoreActionContext) => {
-  const commit: Commit = store.commit;
-  const tracks: any = store.state.tracks;
+export const playNext: StoreAction = ({commit, state}) => {
+  const tracks: any = state.tracks;
 
   if (tracks.playing) {
     const current = tracks.all.indexOf(tracks.playing);

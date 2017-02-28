@@ -10,9 +10,8 @@ export const playTrack = (store, track) => {
 export const pauseTrack = (store) => {
     store.commit(types.PAUSE_TRACK);
 };
-export const playNext = (store) => {
-    const commit = store.commit;
-    const tracks = store.state.tracks;
+export const playNext = ({ commit, state }) => {
+    const tracks = state.tracks;
     if (tracks.playing) {
         const current = tracks.all.indexOf(tracks.playing);
         const next = (current + 1) % tracks.all.length;

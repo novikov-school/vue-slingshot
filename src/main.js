@@ -1,12 +1,8 @@
 /* eslint-disable no-console, no-undef */
 import Vue from "vue";
-import VueRouter from 'vue-router';
 import {createStore} from "./store";
 import router from './router';
 import App from './App.vue';
-
-// plugins
-Vue.use(VueRouter);
 
 // create store & load state
 const store = createStore();

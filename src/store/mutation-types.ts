@@ -8,5 +8,4 @@ export const PLAY_TRACK_NEXT   = 'PLAY_TRACK_NEXT';
 export const PLAY_TRACK_PREV   = 'PLAY_TRACK_PREV';
 export const PAUSE_TRACK       = 'PAUSE_TRACK';
 
-export const LOG_EVENT = "LOG_EVENT";
 export const RECEIVE_ARTISTS = 'RECEIVE_ARTISTS';

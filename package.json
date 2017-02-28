@@ -1,6 +1,6 @@
 {
   "name": "vueify",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Starter kit for creating apps with Vue and Vuex",
   "engines": {
     "npm": ">=3"
@@ -24,8 +24,7 @@
     "build": "babel-node tools/build.js",
     "dist": "npm run build && npm run open:dist",
     "ts": "tsc -p ./src",
-    "test": "mocha test/testSetup.js \"test/**/*.spec.js\" --reporter progress",
-    "test-local": "mocha test/testSetup.js \"test/**/*.test.js\" --reporter progress",
+    "test": "npm run lint && mocha test/testSetup.js \"test/**/*.spec.js\" --reporter progress",
     "test:cover": "babel-node node_modules/isparta/bin/isparta cover --root src --report html node_modules/mocha/bin/_mocha -- --require ./tools/testSetup.js \"test/**/*.spec.js\" --reporter progress",
     "test:watch": "npm run test -- --watch",
     "eslint": "esw src --color",

@@ -8,7 +8,7 @@ export default {
   name: 'App',
   components: {
     sectionHeader,
-    'app-content': content,
+    'app-content': content, // alias for component
     currentTrack
   },
 
