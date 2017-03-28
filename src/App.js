@@ -9,7 +9,7 @@ export default {
   components: {
     sectionHeader,
     'app-content': content, // alias for component
-    currentTrack
+    'current-track': currentTrack
   },
 
   data() {
@@ -20,8 +20,9 @@ export default {
   },
 
   mounted() {
+
     setTimeout(() => {
-      this.$store.dispatch('applicationReady', this.localState);
+      // this.$store.dispatch('applicationReady', this.localState);
       this.loading = false;
     }, 1000);
 
