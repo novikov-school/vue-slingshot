@@ -1,5 +1,6 @@
-import contentLeft from './left';
-import contentRight from './right';
+import contentLeft from '../content-left/index';
+import contentRight from '../content-right/index';
+
 
 const middleTpl = `<div class="content__middle"><router-view></router-view></div>`;
 
